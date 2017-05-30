@@ -1,0 +1,102 @@
+Inputs: 
+1. User inputs day of birth,bDay
+2. User inputs month of birth,bMonth
+3. User inputs year of birth,bYear
+4. Get current day,currentDay
+5. Get current month,currentMonth
+6. Get current year,currentYear
+7. Get new user command, 'Y'or 'N'
+
+Processing steps:
+1. Ensure values for day of birth, month of birth, and year of birth are in the correct ranges
+2. Subtract year of birth from current year
+3. Compare month of birth and current month
+4. Compare day of birth and current day. Determine age
+
+
+
+Outputs:
+1. Prompt user for the day of birth
+2. Prompt user for the month of birth
+3. Prompt user for the year of birth
+4. Prompt user for new user command
+5. Display "Your age is "+age
+6. Print "Thanks for using the age calculator!"
+
+
+Algorithm
+INITIALIZE bDay to 0
+INITIALIZE bMonth to 0
+INITIALIZE bYear to 0
+INITIALIZE currentDay to  current Day
+INITIALIZE currentMonth to current Month
+INITIALIZE currentYear to current Year
+INITIALIZE age to 0
+INITIALIZE ageTurning to 0
+INITIALIZE repeat =='N'
+INITIALIZE Flag=FALSE
+DOWHILE repeat =='Y'
+	DOWHILE bYear is not a number
+		IF bYear is not a number
+	        	Flag=TRUE
+
+		DOWHILE bYear>currentYear
+			IF bYear > currentYear
+				Flag=TRUE
+
+			IF Flag==TRUE
+				INPUT "Invalid value.  Year of birth: ",bYear
+			ELSE 
+				INPUT "Year of birth: ",bYear
+		LOOP
+	LOOP
+	DOWHILE bMonth is not an integer
+			IF bMonth is not an integer
+				Flag=TRUE
+		DOWHILE bMonth>12 or bMonth<1
+			IF bMonth>12 or bMonth<1
+				Flag=TRUE
+			IF Flag==TRUE
+				INPUT "Invalid value. Month of birth: ",bMonth
+			ELSE
+				INPUT "Month of birth: ",bMonth
+		LOOP
+	LOOP
+	DOWHILE bDay is not an integer
+		IF bDay is not an integer
+			Flag=TRUE
+		DOWHILE bDay >31 or bDay<1
+			If bDay>31 or bDay<1
+				Flag = TRUE
+			DOWHILE bMonth in {4,6,9,11} and bDay==31
+				IF bMonth in {4,6,9,11} and bDay==31
+					Flag=TRUE
+				DOWHILE bMonth==2 and bDay>29 
+					IF bMonth==2 and bDay>29 
+						Flag= TRUE
+				IF Flag==TRUE
+					INPUT "Invalid value.  Day of birth:," bDay
+				ELSE
+					INPUT "Day of birth: ",  bDay
+				LOOP
+		LOOP
+	LOOP
+	
+	ageTurning=currentYear-bYear
+	IF bMonth>currentMonth
+		age=ageTurning-1
+	IF bMonth<currentMonth
+		age=ageTurning
+	ELSE bMonth==currentMonth
+		IF bDay>currrentDay
+			age=ageTurning-1
+		ELSE
+			age=ageTurning
+	PRINT "Your age is: "+ age
+	
+	PRINT "Would you like to enter details for another client?"
+	INPUT repeat
+	IF repeat =='N'
+		PRINT "Thanks for using the age calculator!"
+LOOP
+
